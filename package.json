@@ -1,7 +1,7 @@
 {
   "name": "react-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "- Learn React with MERN(Mongo-Express-React-Node) stack according to learning class: https://hashnode.com/post/react-tutorial-using-mern-stack-ciiyus9m700qqge53mer0isxz",
   "main": "webapp.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4"
-  }
+    "express": "^4.13.4",
+    "babel-preset-react": "^6.5.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShengZhang/React-MERN.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ShengZhang/React-MERN/issues"
+  },
+  "homepage": "https://github.com/ShengZhang/React-MERN#readme"
 }

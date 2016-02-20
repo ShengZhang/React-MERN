@@ -1,16 +1,18 @@
 
 var BugFilter = React.createClass({
-    console.log("Rendering BugFilter");
-    render: function(){
+    
+    render: function(){ 
+        console.log("Rendering BugFilter");
         return(
-            <div> A way to filter the list of bugs would come here. </div>
-        );
+            <div> A way to filter the list of bugs would come here.</div>
+        )
     }
 });
 
 var BugAdd = React.createClass({
-    console.log("Rendering BugAdd");
+    
     render: function(){
+        console.log("Rendering BugAdd");
         return(
             <div> BugAdd. </div>
         );
@@ -18,8 +20,9 @@ var BugAdd = React.createClass({
 });
 
 var BugRow = React.createClass({
-    console.log("Rendering BugRow:", this.props.bug);
+    
   render: function() {
+    console.log("Rendering BugRow:", this.props.bug);
     return (
       <tr>
         <td>{this.props.bug.id}</td>
@@ -33,8 +36,9 @@ var BugRow = React.createClass({
 });
 
 var BugTable = React.createClass({
-    console.log("Rendering bug table, num items:", this.props.bugs.length);
+    
     render: function(){
+        console.log("Rendering bug table, num items:", this.props.bugs.length);
         var bugRows = this.props.bugs.map(function(bug){
             return <BugRow key={bug.id} bug={bug} />
         });
@@ -65,34 +69,33 @@ var bugData = [
 
 var BugList = React.createClass({
     getInitialState: function(){
-        return {data:bugData};
+        return {bugs:bugData};
     },
     render: function(){
-        console.log("Rendering bug list, num items:", this.state.bugs.length);
+        console.log("Rendering bug list, num items: ", this.state.bugs.length);
         return(
             <div>
                 <h1>Bug Tracker</h1>
                 <BugFilter />
                 <hr />
-                <BugTable bugs={this.state.data}/>
-                <button onClick={this.testNewBug}><Add Bug></button>
+                <BugTable bugs={this.state.bugs}/>
+                <button onClick={this.testNewBug}>Add Bug</button>
                 <hr />
                 <BugAdd />
             </div>
-        ),
+        )},
 
-        testNewBug: function() {
-            var nextId = this.state.bugs.length + 1;
-            this.addBug({id: nextId, priority: 'P2', status:'New', owner:'Pieta', title:'Warning on console'})
-        },
+    testNewBug: function() {
+        var nextId = this.state.bugs.length + 1;
+        this.addBug({id: nextId, priority: 'P2', status:'New', owner:'Pieta', title:'Warning on console'})
+    },
 
-        addBug: function(bug) {
-            console.log("Adding bug:", bug);
-            // We're advised not to modify the state, it's immutable. So, make a copy.
-            var bugsModified = this.state.bugs.slice();
-            bugsModified.push(bug);
-            this.setState({bugs: bugsModified});
-        }
+    addBug: function(bug) {
+        console.log("Adding bug:", bug);
+        // We're advised not to modify the state, it's immutable. So, make a copy.
+        var bugsModified = this.state.bugs.slice();
+        bugsModified.push(bug);
+        this.setState({bugs: bugsModified});
     }
 
 });
