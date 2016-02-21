@@ -20,3 +20,6 @@ Start using state, prepare for dynamic updates.
 
 ### 4.2 Update state
 Dynamically update the state and see the magic.
+
+### 4.3
+Communicate from child to a parent component.
