@@ -54,3 +54,12 @@ Create a permanent connection to the DB, change GET API to read from DB.
 ### 6.3 Write to DB
 Change POST API to insert a record into the DB.
 
+## 7 Build and Bundle
+
+### 7.1 Browserify
+
+### 7.2 Automate with gulp
+Use gulp to automate the manual tasks.
+TODO:
+ - Learn more about pipe steps in gulpfile.js
+
